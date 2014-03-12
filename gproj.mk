@@ -83,6 +83,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/gps.conf:system/etc/gps.conf
 
+# Netflix fix script
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/tweaks/98netflix:system/etc/init.d/98netflix
+
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc \
