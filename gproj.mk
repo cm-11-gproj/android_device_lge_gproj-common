@@ -85,8 +85,8 @@ PRODUCT_COPY_FILES += \
 
 # Netflix and bt mac adress fix scripts
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/tweaks/98netflix:system/etc/init.d/98netflix
-        $(LOCAL_PATH)/tweaks/98netflix:system/etc/init.d/00btMACfix 
+        $(LOCAL_PATH)/tweaks/98netflix:system/etc/init.d/98netflix \
+        $(LOCAL_PATH)/tweaks/00btMACfix:system/etc/init.d/00btMACfix 
 
 # NFC packages
 PRODUCT_PACKAGES += \
