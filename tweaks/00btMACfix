@@ -1,0 +1,8 @@
+#!/system/bin/sh
+# bt mac address fix for E975 after FreeGee unlock
+# by faust93. monumentum@gmail.com
+#
+BT_ADDR=$(/system/bin/btnvtool -p 2>&1 | awk '/address/ {print $2}' | awk -F "." '{print "\\x"$1 "\\x"$2 "\\x"$3 "\\x"$4 "\\x"$5 "\\x"$6}')
+echo -ne $BT_ADDR | dd bs=1 seek=16384 of=/dev/block/platform/msm_sdcc.1/by-name/misc
+
+
