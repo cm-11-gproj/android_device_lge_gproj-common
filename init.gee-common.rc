@@ -204,8 +204,8 @@ on post-fs-data
     rm /data/local/tmp/adreno_config.txt
 
     # communicate with mpdecision and thermald
-    #mkdir /dev/socket/mpdecision 0770 system system
-    #chmod 2770 /dev/socket/mpdecision
+    mkdir /dev/socket/mpdecision 0770 system system
+    chmod 2770 /dev/socket/mpdecision
 
     # adjust vibrator amplitude
     write /sys/class/timed_output/vibrator/amp 70
@@ -381,9 +381,8 @@ service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emul
 service thermald /system/bin/thermald
     class main
 
-#service 
-#mpdecision /system/bin/mpdecision --no_sleep --avg_comp
-#    class main
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+    class main
 
 service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
    user system
